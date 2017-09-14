@@ -60,7 +60,7 @@ window.onload = function() {
     var category = document.getElementById('category').innerText.toUpperCase();
     
     var results = {};
-    dataset.forEach( function(row) {
+    for(row in dataset) {
       if(businessName && row['Business Name Short'] && row['Business Name Short'].indexOf(businessName) > -1) {
         results.push(row);
         continue;
@@ -83,7 +83,7 @@ window.onload = function() {
         results.push(row);
         continue;        
       }
-    })
+    }
 
     document.getElementById('result').innerText = '<ul><li>' + results.join('</li><li>') + '</li></ul>';
   }
