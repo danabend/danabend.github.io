@@ -48,12 +48,14 @@ window.onload = function() {
     /* convert to JSON */
     dataset = XLSX.utils.sheet_to_json(sheet, {range: 1});
 
-    document.getElementById('loader').style.display = 'none';    
+    document.getElementById('loader').style.display = 'none';
   }
 
   oReq.send();
 
   document.getElementById('search').onclick = function() {
+    document.getElementById('loader').style.display = 'block';
+  
     var businessName = document.getElementById('business-name').value.toUpperCase();
     var personName = document.getElementById('person-name').value.toUpperCase();
     var address = document.getElementById('address').value.toUpperCase();
@@ -94,5 +96,7 @@ window.onload = function() {
     resultHtml = '<ul>' + resultHtml + '</ul>';
 
     document.getElementById('result').innerHtml = resultsHtml;
+
+    document.getElementById('loader').style.display = 'none';    
   }
 };
