@@ -55,7 +55,7 @@ window.onload = function() {
 
   document.getElementById('search').onclick = function() {
     var businessName = document.getElementById('business-name').innerText.toUpperCase();
-    var personName = document.getElementById('person').innerText.toUpperCase();
+    var personName = document.getElementById('person-name').innerText.toUpperCase();
     var address = document.getElementById('address').innerText.toUpperCase();
     var category = document.getElementById('category').innerText.toUpperCase();
     
