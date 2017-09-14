@@ -91,9 +91,12 @@ window.onload = function() {
     /* format results */
     var resultHtml = '';
     results.forEach(function(result) {
-      resultHtml += '<li>' + JSON.stringify(result) + '</li>';
+      resultHtml += '<div class="business">';
+      Object.keys(result).forEach( function(key) {
+        resultHtml += '<div class="row"><div class="title">' + key + '</div><div class="decription">' + result[key] + '</div></div>';
+      });
+      resultHtml += '</div>';
     })
-    resultHtml = '<ul>' + resultHtml + '</ul>';
 
     document.getElementById('result').innerHTML = resultHtml;
 
