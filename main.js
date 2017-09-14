@@ -1,4 +1,8 @@
+var dataset = {};
+
 window.onload = function() {
+  document.getElementById('loading-icon').style.display = 'block';
+
   /* set up XMLHttpRequest */
   var url = "2016ResidentBusinessLicenseList_201612201241106417.xlsx";
   var oReq = new XMLHttpRequest();
@@ -19,14 +23,21 @@ window.onload = function() {
 
     /* DO SOMETHING WITH workbook HERE */
     var sheet = workbook.Sheets[workbook.SheetNames[0]];
+    /* trim spaces */
     Object.keys(sheet).forEach( function(key) {
       if(sheet[key].w) {
         sheet[key].w = sheet[key].w.trim();
       }
     });
-    var json = XLSX.utils.sheet_to_json(sheet, {range: 1});
-    document.getElementById('result').innerText = JSON.stringify(json);
+    /* convert to JSON */
+    dataset = XLSX.utils.sheet_to_json(sheet, {range: 1});
+
+    document.getElementById('loading-icon').style.display = 'none';    
   }
 
   oReq.send();
 };
+
+function search() {
+
+}
