@@ -103,7 +103,7 @@ window.onload = function() {
     }
 
     /* format results */
-    var resultHtml = '<div class="result-info"><div class="result-info-matches">' + result.length + '</div></div>';
+    var resultHtml = '<div class="result-info"><div class="result-info-matches">' + results.length + '</div></div>';
     results.forEach(function(result) {
       resultHtml += '<div class="business">';
       Object.keys(result).forEach( function(key) {
