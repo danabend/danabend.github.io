@@ -95,7 +95,7 @@ window.onload = function() {
     })
     resultHtml = '<ul>' + resultHtml + '</ul>';
 
-    document.getElementById('result').innerHtml = resultHtml;
+    document.getElementById('result').innerHTML = resultHtml;
 
     document.getElementById('loader').style.display = 'none';    
   }
