@@ -64,15 +64,17 @@ html, body {
 
 .business {
   margin-top: 20px;
-  padding: 10px;
   margin-bottom: 5px;
   border: 2px solid #BBB;
   border-radius: 6px;
+  display: flow-root;
 }
 
 .row {
   float: left;
   margin: 5px;
+  padding: 5px;
+  background-color: #EEE;
 }
 
 .title {
