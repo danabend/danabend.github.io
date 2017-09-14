@@ -62,9 +62,12 @@ html, body {
   }
 }
 
-.row {
-  box-shadow: 1px 1px black;
-  box-shadow: -1px -1px rgb(0,200,200);
+.business {
+  margin-top: 20px;
+  box-shadow: 1px 1px 1px black;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 2px;
 }
 
 .title {
