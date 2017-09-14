@@ -61,3 +61,17 @@ html, body {
     transform: rotate(360deg);
   }
 }
+
+.row {
+  box-shadow: 1px 1px black;
+  box-shadow: -1px -1px rgb(0,200,200);
+}
+
+.title {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.description {
+  font-family: georgia;
+}
