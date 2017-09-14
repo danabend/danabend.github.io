@@ -15,7 +15,7 @@ window.onload = function() {
     var bstr = arr.join("");
 
     /* Call XLSX */
-    var workbook = XLSX.read(bstr, {type:"binary", sheetRows: 1});
+    var workbook = XLSX.read(bstr, {type:"binary", sheetRows: 2});
 
     /* DO SOMETHING WITH workbook HERE */
     document.write(XLSX.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]]));
