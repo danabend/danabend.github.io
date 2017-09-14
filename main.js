@@ -65,37 +65,40 @@ window.onload = function() {
     for (var i = 0; i < dataset.length; i++) {
       var row = dataset[i];
       var fullmatch = true;
+      var matches = 0;
       if(businessName && row['Business Name Short']) {
         if(row['Business Name Short'].indexOf(businessName) > -1) {
-          results.push(row);
-          continue;
+          matches += 1;
+        } else {
+          fullmatch = false;          
         }
-        fullmatch = false;
       }
       if(personName && row['Applicant or Qualifier of Person']) {
         if(row['Applicant or Qualifier of Person'].indexOf(personName) > -1) {
-          results.push(row);
-          continue;        
+          matches += 1;
+        } else {
+          fullmatch = false;
         }
-        fullmatch = false;
       }
       if(address && row['Location Address']) {
         if(row['Location Address'].indexOf(address) > -1) {
-          results.push(row);
-          continue;
+          matches += 1;
+        } else if(row['Business Mailing Address Line 01'] && row['Business Mailing Address Line 01'].indexOf(address) > -1) {
+          matches += 1;
+        } else {
+          fullmatch = false;
         }
-        if(row['Business Mailing Address Line 01'] && row['Business Mailing Address Line 01'].indexOf(address) > -1) {
-          results.push(row);
-          continue;
-        } 
-        fullmatch = false;
       }
       if(category && row['License Classification Description']) {
         if(category && row['License Classification Description'] && row['License Classification Description'].indexOf(category) > -1) {
-          results.push(row);
-          continue;        
+          matches += 1;
+        } else {
+          fullmatch = false;
         }
-        fullmatch = false;
+      }
+
+      if(fullmatch && matches > 0) {
+        resuts.push(row);
       }
     }
 
