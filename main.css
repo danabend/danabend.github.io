@@ -1,7 +1,13 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
 .overlay {
   width: 100%;
   position: relative;
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(80,128,255,0.4);
+  z-index: 9999;
 }
 
 .loader,
@@ -11,11 +17,10 @@
   height: 5em;
 }
 .loader {
-  margin: 60px auto;
   font-size: 10px;
+  margin: auto;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 0; left: 0; bottom: 0; right: 0;
   text-indent: -9999em;
   border-top: 1.1em solid rgba(203,108,0, 0.2);
   border-right: 1.1em solid rgba(203,108,0, 0.2);
