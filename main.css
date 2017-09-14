@@ -64,14 +64,18 @@ html, body {
 
 .business {
   margin-top: 20px;
-  box-shadow: 1px 1px 1px black;
   padding: 10px;
   margin-bottom: 5px;
-  border-radius: 2px;
+  border: 2px solid #BBB;
+  border-radius: 6px;
+}
+
+.row {
+  float: left;
+  margin: 5px;
 }
 
 .title {
-  display: inline-block;
   font-weight: bold;
 }
 
