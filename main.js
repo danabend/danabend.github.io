@@ -1,7 +1,7 @@
 var dataset = {};
 
 window.onload = function() {
-  document.getElementById('loading-icon').style.display = 'block';
+  document.getElementById('loader').style.display = 'block';
 
   /* set up XMLHttpRequest */
   var url = "2016ResidentBusinessLicenseList_201612201241106417.xlsx";
@@ -32,7 +32,7 @@ window.onload = function() {
     /* convert to JSON */
     dataset = XLSX.utils.sheet_to_json(sheet, {range: 1});
 
-    document.getElementById('loading-icon').style.display = 'none';    
+    document.getElementById('loader').style.display = 'none';    
   }
 
   oReq.send();
