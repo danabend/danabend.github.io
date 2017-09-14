@@ -84,3 +84,14 @@ html, body {
 .description {
   font-family: georgia;
 }
+
+.result-info-matches {
+  font-size: 3em;
+  font-weight: bold;
+  background: #57a9ff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  color: white;
+}
