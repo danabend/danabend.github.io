@@ -60,7 +60,8 @@ window.onload = function() {
     var category = document.getElementById('category').innerText.toUpperCase();
     
     var results = {};
-    for(row in dataset) {
+    for (var i = 0; i < dataset.length; i++) {
+      var row = dataset[i];
       if(businessName && row['Business Name Short'] && row['Business Name Short'].indexOf(businessName) > -1) {
         results.push(row);
         continue;
