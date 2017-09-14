@@ -89,13 +89,13 @@ window.onload = function() {
     }
 
     /* format results */
-    var resultsHtml = '';
+    var resultHtml = '';
     results.forEach(function(result) {
       resultHtml += '<li>' + JSON.stringify(result) + '</li>';
     })
     resultHtml = '<ul>' + resultHtml + '</ul>';
 
-    document.getElementById('result').innerHtml = resultsHtml;
+    document.getElementById('result').innerHtml = resultHtml;
 
     document.getElementById('loader').style.display = 'none';    
   }
