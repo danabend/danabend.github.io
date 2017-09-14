@@ -19,8 +19,8 @@ window.onload = function() {
 
     /* DO SOMETHING WITH workbook HERE */
     var sheet = workbook.Sheets[workbook.SheetNames[0]];
-    sheet.forEach( function(value, index) {
-      value.v = value.v.trim();
+    Object.keys(sheet).forEach( function(key) {
+      sheet[key].v = sheet[key].v.trim();
     });
     var json = XLSX.utils.sheet_to_json(sheet, {range: 1});
     document.getElementById('result').innerText = JSON.stringify(json);
