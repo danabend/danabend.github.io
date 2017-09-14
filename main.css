@@ -94,4 +94,7 @@ html, body {
   height: 60px;
   text-align: center;
   color: white;
+  position: absolute;
+  top: 140px;
+  left: 270px;
 }
