@@ -54,12 +54,12 @@ window.onload = function() {
   oReq.send();
 
   document.getElementById('search').onclick = function() {
-    var businessName = document.getElementById('business-name').innerText.toUpperCase();
-    var personName = document.getElementById('person-name').innerText.toUpperCase();
-    var address = document.getElementById('address').innerText.toUpperCase();
-    var category = document.getElementById('category').innerText.toUpperCase();
+    var businessName = document.getElementById('business-name').value.toUpperCase();
+    var personName = document.getElementById('person-name').value.toUpperCase();
+    var address = document.getElementById('address').value.toUpperCase();
+    var category = document.getElementById('category').value.toUpperCase();
     
-    var results = {};
+    var results = [];
     for (var i = 0; i < dataset.length; i++) {
       var row = dataset[i];
       if(businessName && row['Business Name Short'] && row['Business Name Short'].indexOf(businessName) > -1) {
