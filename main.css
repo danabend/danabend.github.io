@@ -10,6 +10,8 @@ html, body {
   position: relative;
   background-color: rgba(80,128,255,0.4);
   z-index: 9999;
+  overflow-x:hidden;
+  overflow-y:hidden;
 }
 
 .loader,
