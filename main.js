@@ -20,7 +20,9 @@ window.onload = function() {
     /* DO SOMETHING WITH workbook HERE */
     var sheet = workbook.Sheets[workbook.SheetNames[0]];
     Object.keys(sheet).forEach( function(key) {
-      sheet[key].w = sheet[key].w.trim();
+      if(sheet[key].w) {
+        sheet[key].w = sheet[key].w.trim();
+      }
     });
     var json = XLSX.utils.sheet_to_json(sheet, {range: 1});
     document.getElementById('result').innerText = JSON.stringify(json);
