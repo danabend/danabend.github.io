@@ -86,10 +86,13 @@ window.onload = function() {
       }
     }
 
-    document.getElementById('result').innerText = '<ul><li>' + results.join('</li><li>') + '</li></ul>';
+    /* format results */
+    var resultsHtml = '';
+    results.forEach(function(result) {
+      resultHtml += '<li>' + JSON.stringify(result) + '</li>';
+    })
+    resultHtml = '<ul>' + resultHtml + '</ul>';
+
+    document.getElementById('result').innerHtml = resultsHtml;
   }
 };
-
-function search() {
-
-}
