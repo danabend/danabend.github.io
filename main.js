@@ -64,16 +64,23 @@ window.onload = function() {
     var results = [];
     for (var i = 0; i < dataset.length; i++) {
       var row = dataset[i];
-      if(businessName && row['Business Name Short'] && row['Business Name Short'].indexOf(businessName) > -1) {
-        results.push(row);
-        continue;
+      var fullmatch = true;
+      if(businessName && row['Business Name Short']) {
+        if(row['Business Name Short'].indexOf(businessName) > -1) {
+          results.push(row);
+          continue;
+        }
+        fullmatch = false;
       }
-      if(personName && row['Applicant or Qualifier of Person'] && row['Applicant or Qualifier of Person'].indexOf(personName) > -1) {
-        results.push(row);
-        continue;        
+      if(personName && row['Applicant or Qualifier of Person']) {
+        if(row['Applicant or Qualifier of Person'].indexOf(personName) > -1) {
+          results.push(row);
+          continue;        
+        }
+        fullmatch = false;
       }
-      if(address) {
-        if(row['Location Address'] && row['Location Address'].indexOf(address) > -1) {
+      if(address && row['Location Address']) {
+        if(row['Location Address'].indexOf(address) > -1) {
           results.push(row);
           continue;
         }
@@ -81,10 +88,14 @@ window.onload = function() {
           results.push(row);
           continue;
         } 
+        fullmatch = false;
       }
-      if(category && row['License Classification Description'] && row['License Classification Description'].indexOf(category) > -1) {
-        results.push(row);
-        continue;        
+      if(category && row['License Classification Description']) {
+        if(category && row['License Classification Description'] && row['License Classification Description'].indexOf(category) > -1) {
+          results.push(row);
+          continue;        
+        }
+        fullmatch = false;
       }
     }
 
