@@ -15,10 +15,10 @@ window.onload = function() {
     var bstr = arr.join("");
 
     /* Call XLSX */
-    var workbook = XLSX.read(bstr, {type:"binary", range: 2});
+    var workbook = XLSX.read(bstr, {type:"binary"});
 
     /* DO SOMETHING WITH workbook HERE */
-    document.write(XLSX.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]]));
+    document.write(XLSX.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]], {range: 2}));
   }
 
   oReq.send();
