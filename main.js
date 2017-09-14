@@ -98,7 +98,7 @@ window.onload = function() {
       }
 
       if(fullmatch && matches > 0) {
-        resuts.push(row);
+        results.push(row);
       }
     }
 
