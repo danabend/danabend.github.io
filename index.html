@@ -16,26 +16,31 @@
             <div class="loader" id="loading-icon">Loading...</div>
         </div>
         <div class="main-content">
-            <h1>Greenville Business Registration Search</h1>
-            <form>
-              <div class="form-input">
-                <label for="business">Business</label>
-                <input name="business-name" id="business-name" type="text" />
-              </div>
-              <div class="form-input">
-                  <label for="address">Address</label>
-                  <input name="address" id="address" type="text" />
-              </div>
-              <div class="form-input">
-                  <label for="person">Person</label>
-                  <input name="person" id="person" type="text" />
-              </div>
-              <div class="form-input">
-                  <label for="category">Category</label>
-                  <input name="category" id="category" type="text" />
-              </div>
-            </form>
-        </div>
+          <h1>Greenville Business Registration Search</h1>
+          <form>
+            <div class="form-input">
+              <label for="business">Business</label>
+              <input name="business-name" id="business-name" type="text" />
+            </div>
+            <div class="form-input">
+                <label for="address">Address</label>
+                <input name="address" id="address" type="text" />
+            </div>
+            <div class="form-input">
+                <label for="person">Person</label>
+                <input name="person-name" id="person-name" type="text" />
+            </div>
+            <div class="form-input">
+                <label for="category">Category</label>
+                <input name="category" id="category" type="text" />
+            </div>
+            <div class="form-input">
+                <button name="search" id="search">Search</button>
+            </div>
+          </form>
+          <div id="result">
+          </div>
+        </div>div>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.11.3/xlsx.full.min.js"></script>
         <script src="main.js"></script>
     </body>

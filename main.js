@@ -1,4 +1,20 @@
 var dataset = {};
+/*
+Applicant or Qualifier Person Title: "APPLICANT"
+Applicant or Qualifier of Person: "PITCOCK, THERESA"
+Business Mailing Address Line 01: "AATN: THERESE PITCOCK, GEN ACC"
+Business Mailing Address Line 02: "6600 AAA DRIVE"
+Business Mailing City: "CHARLOTTE"
+Business Mailing State: "NC"
+Business Mailing Zip Code: "28212"
+Business Name Short: "A A A CAR CARE CENTERS LLC"
+Business Opened Date: "09/08/2007"
+License Classification Description: "AUTO GARAGE"
+License Fiscal Year: "2016"
+License Number: "26678"
+License Status: "AC"
+Location Address: "924 N  PLEASANTBURG DR"
+*/
 
 window.onload = function() {
   document.getElementById('loader').style.display = 'block';
@@ -36,6 +52,41 @@ window.onload = function() {
   }
 
   oReq.send();
+
+  document.getElementById('search').onclick = function() {
+    var businessName = document.getElementById('business-name').innerText.toUpperCase();
+    var personName = document.getElementById('person').innerText.toUpperCase();
+    var address = document.getElementById('address').innerText.toUpperCase();
+    var category = document.getElementById('category').innerText.toUpperCase();
+    
+    var results = {};
+    dataset.forEach( function(row) {
+      if(businessName && row['Business Name Short'] && row['Business Name Short'].indexOf(businessName) > -1) {
+        results.push(row);
+        continue;
+      }
+      if(personName && row['Applicant or Qualifier of Person'] && row['Applicant or Qualifier of Person'].indexOf(personName) > -1) {
+        results.push(row);
+        continue;        
+      }
+      if(address) {
+        if(row['Location Address'] && row['Location Address'].indexOf(address) > -1) {
+          results.push(row);
+          continue;
+        }
+        if(row['Business Mailing Address Line 01'] && row['Business Mailing Address Line 01'].indexOf(address) > -1) {
+          results.push(row);
+          continue;
+        } 
+      }
+      if(category && row['License Classification Description'] && row['License Classification Description'].indexOf(category) > -1) {
+        results.push(row);
+        continue;        
+      }
+    })
+
+    document.getElementById('result').innerText = '<ul><li>' + results.join('</li><li>') + '</li></ul>';
+  }
 };
 
 function search() {
