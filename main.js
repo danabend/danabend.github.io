@@ -18,8 +18,12 @@ window.onload = function() {
     var workbook = XLSX.read(bstr, {type:"binary"});
 
     /* DO SOMETHING WITH workbook HERE */
-    var sheet = XLSX.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]], {range: 1});
-    document.getElementById('result').innerText = JSON.stringify(sheet);
+    var sheet = workbook.Sheets[workbook.SheetNames[0]];
+    sheet.forEach( function(value, index) {
+      value.v = value.v.trim();
+    });
+    var json = XLSX.utils.sheet_to_json(sheet, {range: 1});
+    document.getElementById('result').innerText = JSON.stringify(json);
   }
 
   oReq.send();
